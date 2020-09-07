@@ -1,4 +1,4 @@
-[![Header](https://images.app.goo.gl/EEGQAfrs3vs2yhBW7 "Header")](https://some-url.dev/)
+<img src="https://images.app.goo.gl/EEGQAfrs3vs2yhBW7" >
 ### Hi there 👋
 
 <!--
