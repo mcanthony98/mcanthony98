@@ -1,7 +1,6 @@
 [![Header](https://makeawebsitehub.com/wp-content/uploads/2016/01/coding.jpg "Header")](https://mcanthony98.github.io/mcanthony98/)
-
-<img src="https://makeawebsitehub.com/wp-content/uploads/2016/01/coding.jpg"/>
-### Hi there 👋
+<h1> Hi there 👋</h1>
+<hr/>
 <a href="https://mcanthony98.github.io/mcanthony98/">Click here to view my profile</a>
 <!--
 **mcanthony98/mcanthony98** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
