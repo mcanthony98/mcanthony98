@@ -1,4 +1,4 @@
-[![Header](https://www.google.com/imgres?imgurl=https%3A%2F%2Fmakeawebsitehub.com%2Fwp-content%2Fuploads%2F2016%2F01%2Fcoding.jpg&imgrefurl=https%3A%2F%2Fmakeawebsitehub.com%2Fwhich-programming-language%2F&tbnid=EVX0rTVJ0YEAMM&vet=12ahUKEwjMwuPC1tfrAhXD_IUKHVKSBzQQMygqegUIARCtAg..i&docid=qjbCL4ds1kQ4MM&w=640&h=360&q=coding%20and%20programming&ved=2ahUKEwjMwuPC1tfrAhXD_IUKHVKSBzQQMygqegUIARCtAg "Header")](https://some-url.dev/)
+[![Header](https://images.app.goo.gl/EEGQAfrs3vs2yhBW7 "Header")](https://some-url.dev/)
 ### Hi there 👋
 
 <!--
