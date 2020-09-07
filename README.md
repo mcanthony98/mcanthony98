@@ -20,7 +20,7 @@
 <hr/>
 <a href="https://mcanthony98.github.io/mcanthony98/"> 👉 Click here to view my full profile</a>
 <hr/>
-<h3 style="color:red">We create what we dream</h3>
+<h3 align="center">😃 😃 😃 We create what we dream 😃 😃 😃</h3>
 <!--
 **mcanthony98/mcanthony98** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
