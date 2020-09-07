@@ -18,8 +18,7 @@
 </ul>
 
 <hr/>
-<h2>&#x1f4c8; GitHub Stats</h2>
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&layout=compact)](https://github.com/mcanthony98/github-readme-stats)
+<a href="https://mcanthony98.github.io/mcanthony98/"> 👉 Click here to view my full profile</a>
 <!--
 **mcanthony98/mcanthony98** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
