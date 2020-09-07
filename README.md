@@ -1,4 +1,4 @@
-[![Header](https://makeawebsitehub.com/wp-content/uploads/2016/01/coding.jpg "Header")](https://mcanthony98.github.io/mcanthony98/)
+[![Header](https://makeawebsitehub.com/wp-content/uploads/2016/01/coding.jpg "I Just Love Coding")](https://mcanthony98.github.io/mcanthony98/)
 <h1> Hi there 👋</h1>
 <p>My Name is Mark Anthony Maina. I am a web developer currently living in Nairobi, Kenya. I loving coding and programming. I believe in creating solutions to problems because
 "<i><strong>problems were meant to be solved</strong></i>". </p>
