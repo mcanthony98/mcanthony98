@@ -1,6 +1,8 @@
 [![Header](https://makeawebsitehub.com/wp-content/uploads/2016/01/coding.jpg "Header")](https://mcanthony98.github.io/mcanthony98/)
 <h1> Hi there 👋</h1>
 <hr/>
+<p>My Name is Mark Anthony Maina. I am a web developer currently living in Nairobi, Kenya. I loving coding and programming. I believe in creating solutions to problems because
+"<i><strong>problems were meant to be solved</strong></i>". <br/> You can find me on [![LinkedIn][3.2]][3] or on [![Twitter][1.2]][1].</p>
 <a href="https://mcanthony98.github.io/mcanthony98/">Click here to view my profile</a>
 <!--
 **mcanthony98/mcanthony98** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
