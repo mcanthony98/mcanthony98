@@ -1,6 +1,5 @@
-<img src="https://images.app.goo.gl/EEGQAfrs3vs2yhBW7" >
 ### Hi there 👋
-
+<a href="https://mcanthony98.github.io/mcanthony98/">Click here to view my profile</a>
 <!--
 **mcanthony98/mcanthony98** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
