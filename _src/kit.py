@@ -20,6 +20,7 @@ esc = html.escape
 # ---------------------------------------------------------------- icons
 _P = {
     "arrow": '<path d="M5 12h14M13 6l6 6-6 6"/>',
+    "up": '<path d="M12 19V5M6 11l6-6 6 6"/>',
     "down": '<path d="M6 9l6 6 6-6"/>',
     "check": '<path d="M20 6L9 17l-5-5"/>',
     "check-circle": '<circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5.5"/>',
@@ -292,7 +293,7 @@ def footer(services, cases, r=""):
         <li><a href="{GANIAM}" target="_blank" rel="noopener">ganiamtech.com</a></li>
       </ul></div>
     </div>
-    <div class="footer-bottom"><span>&copy; <span id="year">2026</span> Mark Anthony Maina &middot; Ganiam Tech</span><span>Built by hand. Every number on this site is from a real client account.</span></div>
+    <div class="footer-bottom"><span>&copy; <span id="year">2026</span> Mark Anthony Maina &middot; Ganiam Tech</span><span>Online Revenue Specialist &middot; working with clients worldwide.</span></div>
   </div>
 </footer>
 <script src="{r}assets/js/site.js" defer></script>

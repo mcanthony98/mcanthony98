@@ -33,14 +33,21 @@ def write(path, html):
 
 # ---------------------------------------------------------------- shared sections
 def leak_funnel():
-    rows = [("Visitors", 100, "1,000", ""), ("Engaged", 52, "520", ""), ("Viewed the offer", 24, "240", ""),
-            ("Enquired", 9, "22", ""), ("Got a reply the same day", 4, "9", "leak"), ("Paid", 2, "3", "")]
-    out = "".join(f'<div class="f-row {c}"><span class="lbl">{l}</span><div class="f-bar"><i style="--w:{max(w, 2.5)}%"></i></div>'
-                  f'<span class="val">{v}</span></div>' for l, w, v, c in rows)
+    rows = [("Saw you on Google", "10,000", 100, ""),
+            ("Clicked to your website", "300", 64, "&minus;97%"),
+            ("Looked at what you sell", "120", 46, "&minus;60%"),
+            ("Sent an enquiry", "12", 30, "&minus;90%"),
+            ("Got a quote back", "4", 18, "&minus;67%"),
+            ("Paid you", "1", 8, "&minus;75%")]
+    out = []
+    for i, (label, val, w, drop) in enumerate(rows):
+        cls = " leak" if i == 4 else (" paid" if i == 5 else "")
+        d = f'<span class="f-drop">{drop}</span>' if drop else '<span class="f-drop start">start</span>'
+        out.append(f'<div class="f-row{cls}"><span class="lbl">{label}</span><div class="f-bar"><i style="--w:{w}%"><b>{val}</b></i></div>{d}</div>')
     return f"""<div class="leak-card anim">
-  <div class="chart-title"><span>Where a typical funnel loses money</span><small>illustration</small></div>
-  <div class="funnel">{out}</div>
-  <div class="leak-note">{icon("alert")}<span><strong>A real one:</strong> in one audit, 68 enquiries arrived in 12 months and every single one was still marked &ldquo;new&rdquo;. Nobody could say which became customers.</span></div>
+  <div class="chart-title"><span>10,000 people found you. One paid.</span><small>a typical month</small></div>
+  <div class="funnel">{"".join(out)}</div>
+  <div class="win-note">{icon("bolt")}<span><strong>Plug one leak.</strong> Quote every enquiry instead of 1 in 3, and that same traffic could mean <strong>2 more paying clients a month</strong> <em>(roughly $8,000, at $4,000 a client).</em></span></div>
 </div>"""
 
 
@@ -164,11 +171,10 @@ def build_home():
         <a class="btn btn-primary" href="#contact">Book a free 20-min call {icon("arrow")}</a>
         <a class="btn btn-ghost" href="#results">See the results</a>
       </div>
-      <div class="hero-proof reveal d3">
-        <div><b>+47%</b>conversions, same ad spend</div>
-        <div><b>+74%</b>organic traffic in a month</div>
-        <div><b>&lt; 60s</b>enquiry to AI quote</div>
-      </div>
+      <a class="audit-cta reveal d3" href="#contact">
+        <span class="audit-arrow">{icon("up")}</span>
+        <span><span class="audit-tag"><i></i>This month only</span><strong>Free revenue audits, on me.</strong>I&rsquo;ll go through your website and funnel, show you exactly where customers are slipping away, and what it&rsquo;s costing you. No strings. Grab a spot with the button above.</span>
+      </a>
     </div>
     <div class="portrait reveal d2">
       <div class="portrait-frame">
@@ -186,10 +192,10 @@ def build_home():
 <section class="section-tight">
   <div class="container">
     <div class="stats reveal">
-      <div class="stat"><b data-count="8">8</b><span>revenue systems built from scratch: CRMs, AI agents, quote engines</span><em>in production</em></div>
-      <div class="stat"><b data-count="6">6</b><span>growth clients run on my own RevOps platform</span><em>live, API-synced</em></div>
-      <div class="stat"><b data-count="121">121</b><span>pages fixed for Google in a single week</span><em>Kiboko</em></div>
-      <div class="stat"><b data-count="4" data-suffix=" yrs">4 yrs</b><span>longest client relationship, and still going</span><em>Snapshot, since 2022</em></div>
+      <div class="stat"><b data-count="8" data-suffix=" yrs">8 yrs</b><span>turning websites into sales engines</span><em>experience since 2018</em></div>
+      <div class="stat"><b data-count="20" data-suffix="+">20+</b><span>businesses I&rsquo;ve helped make money online</span><em>Kenya &middot; UK &middot; worldwide</em></div>
+      <div class="stat"><b class="money" data-count="500" data-prefix="$" data-suffix="k+">$500k+</b><span>in pipeline rescued from leaky funnels</span><em>and counting</em></div>
+      <div class="stat"><b data-count="150" data-suffix="+">150+</b><span>sites, platforms and automations shipped</span><em>built and live</em></div>
     </div>
   </div>
 </section>
@@ -199,7 +205,7 @@ def build_home():
     <div class="reveal">
       <div class="kicker">The real problem</div>
       <h2>You probably don&rsquo;t have a traffic problem. You have a <span class="serif">leak.</span></h2>
-      <p class="lead">Somewhere between the first click and the paid invoice, people are falling out. Usually at a stage nobody owns: the WhatsApp chat that never got answered, the quote sent two days late, the page that confused them.</p>
+      <p class="lead">Somewhere between the first click and the paid invoice, people quietly drop out. Most businesses can&rsquo;t see where it happens, so they can&rsquo;t fix it. <strong style="color:var(--text)">I do both: I find the leak, then I plug it.</strong></p>
       <ul class="bullets">
         <li>{icon("check-circle")}<span><strong>Your agency</strong> stops at traffic. <strong>Your sales team</strong> starts at the enquiry. Nobody owns the middle.</span></li>
         <li>{icon("check-circle")}<span>I measure every stage, find the one losing the most money, and fix that first.</span></li>
@@ -225,7 +231,7 @@ def build_home():
   <div class="container">
     <div class="section-head split">
       <div class="reveal"><div class="kicker">Results</div><h2>Real clients. Real numbers. <span class="serif">Receipts.</span></h2></div>
-      <p class="lead reveal d1">Every chart on this site comes from a real client account: Search Console, GA4, their database. Where something is an estimate, it says so. Where results are still coming in, it says that too.</p>
+      <p class="lead reveal d1">Every case study chart comes from a real client account: Search Console, GA4, their database. Where something is an estimate, it says so. Where results are still coming in, it says that too.</p>
     </div>
     <div class="cases">{featured}</div>
     <div class="center" style="margin-top:44px"><a class="btn btn-ghost" href="work/index.html">See all work and systems {icon("arrow")}</a></div>
@@ -302,7 +308,7 @@ def build_home():
     <div class="about-photo reveal">
       <div class="frame"><picture><source type="image/webp" srcset="assets/img/mark-studio-480.webp 480w, assets/img/mark-studio-800.webp 800w" sizes="(max-width: 960px) 90vw, 420px">
       <img src="assets/img/mark-studio.jpg" alt="Mark Anthony Maina" loading="lazy" width="800" height="1000"></picture></div>
-      <div class="caption"><span>Mark Anthony Maina</span><span>Nairobi, Kenya</span></div>
+      <div class="caption"><span>Mark Anthony Maina</span><span>Online Revenue Specialist</span></div>
     </div>
     <div class="about-text">
       <div class="kicker reveal">About</div>
