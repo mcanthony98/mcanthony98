@@ -208,6 +208,9 @@ h4 { font-size: 18px; letter-spacing: -.01em; line-height: 1.3; }
 .hero-grid { display: grid; grid-template-columns: 1.12fr .88fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
 .hero h1 { margin-bottom: 26px; }
 .hero h1 .serif { font-size: 1.08em; line-height: .9; }
+.hero-h1 { font-size: clamp(38px, 5.4vw, 74px); line-height: 1.02; }
+.hero-h1 .serif { color: var(--lavender); }
+.nowrap { white-space: nowrap; }
 .hero .lead { color: rgba(232, 234, 255, .74); margin-bottom: 34px; max-width: 600px; }
 .hero .lead strong { color: #fff; font-weight: 600; }
 .pill {
@@ -242,10 +245,9 @@ h4 { font-size: 18px; letter-spacing: -.01em; line-height: 1.3; }
 .chip-ic svg { width: 19px; height: 19px; }
 .chip b { display: block; font-family: var(--display); font-size: 17px; font-weight: 700; letter-spacing: -.02em; }
 .chip small { display: block; color: rgba(255, 255, 255, .62); font-size: 12px; margin-top: 2px; }
-.chip-a { top: 7%; left: -16%; }
-.chip-b { top: 34%; right: -14%; animation-delay: -1.8s; }
-.chip-c { bottom: 24%; left: -18%; animation-delay: -3.6s; }
-.chip-d { bottom: 5%; right: -10%; animation-delay: -5.2s; }
+.chip-a { top: 8%; left: -16%; }
+.chip-b { top: 42%; right: -14%; animation-delay: -2.2s; }
+.chip-c { bottom: 7%; left: -14%; animation-delay: -4.4s; }
 @keyframes float { 50% { transform: translateY(-8px); } }
 
 /* Page hero (services + case studies) */
@@ -652,7 +654,7 @@ h4 { font-size: 18px; letter-spacing: -.01em; line-height: 1.3; }
 /* ---------- Responsive ---------- */
 @media (max-width: 1080px) {
   .loop { grid-template-columns: repeat(3, 1fr); }
-  .chip-a { left: -6%; } .chip-b { right: -4%; } .chip-c { left: -6%; } .chip-d { right: -3%; }
+  .chip-a { left: -6%; } .chip-b { right: -4%; } .chip-c { left: -4%; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 960px) {
@@ -702,7 +704,7 @@ h4 { font-size: 18px; letter-spacing: -.01em; line-height: 1.3; }
   .chip { max-width: 200px; padding: 8px 12px 8px 8px; }
   .chip-ic { width: 32px; height: 32px; }
   .chip b { font-size: 15px; }
-  .chip-a { left: -2%; top: 4%; } .chip-b { right: -2%; top: 30%; } .chip-c { left: -2%; bottom: 22%; } .chip-d { right: -2%; bottom: 4%; }
+  .chip-a { left: -2%; top: 4%; } .chip-b { right: -2%; top: 40%; } .chip-c { left: -2%; bottom: 4%; }
   @keyframes float { 50% { transform: scale(.86) translateY(-6px); } }
   .duo-list li { grid-template-columns: 1fr; gap: 2px; }
   .cs-aside { grid-template-columns: 1fr; }

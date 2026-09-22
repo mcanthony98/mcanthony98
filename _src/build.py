@@ -158,7 +158,7 @@ def build_home():
   <div class="container hero-grid">
     <div>
       <div class="pill reveal"><i></i>Taking new projects &middot; Worldwide</div>
-      <h1 class="reveal d1">I help businesses make <span class="serif">money.</span></h1>
+      <h1 class="reveal d1 hero-h1">I help businesses<br><span class="nowrap">make <span class="serif">money online.</span></span></h1>
       <p class="lead reveal d2">Hi, I&rsquo;m Mark. Not traffic, not likes: <strong>money.</strong> I build the systems between a stranger&rsquo;s first click and cash in your bank (the website, the tracking, the automations, the AI agents) and then I show you the numbers, so you know it worked.</p>
       <div class="btn-row reveal d3">
         <a class="btn btn-primary" href="#contact">Book a free 20-min call {icon("arrow")}</a>
@@ -175,10 +175,9 @@ def build_home():
         <picture><source type="image/webp" srcset="assets/img/mark-hero-560.webp 560w, assets/img/mark-hero-900.webp 900w" sizes="(max-width: 960px) 90vw, 470px">
         <img src="assets/img/mark-hero.jpg" alt="Mark Anthony Maina" width="900" height="1125" fetchpriority="high"></picture>
       </div>
-      <div class="chip chip-a"><span class="chip-ic">{icon("grad")}</span><div><b>BSc Engineering</b><small>Electrical &amp; Electronics &middot; JKUAT</small></div></div>
-      <div class="chip chip-b"><span class="chip-ic">{icon("code")}</span><div><b>30+</b><small>sites, platforms &amp; automations shipped</small></div></div>
-      <div class="chip chip-c"><span class="chip-ic">{icon("cal")}</span><div><b>8 years</b><small>building for the web, since 2018</small></div></div>
-      <div class="chip chip-d"><span class="chip-ic">{icon("globe")}</span><div><b>Kenya &middot; UK</b><small>clients on two continents</small></div></div>
+      <div class="chip chip-a"><span class="chip-ic">{icon("cal")}</span><div><b>8 years</b><small>building for the web, since 2018</small></div></div>
+      <div class="chip chip-b"><span class="chip-ic">{icon("code")}</span><div><b>150+</b><small>sites, platforms &amp; automations shipped</small></div></div>
+      <div class="chip chip-c"><span class="chip-ic">{icon("globe")}</span><div><b>Worldwide</b><small>taking clients globally</small></div></div>
     </div>
   </div>
 </section>
@@ -344,8 +343,8 @@ def build_home():
                    "address": {"@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "KE"},
                    "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Services", "itemListElement": [
                        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": s["name"], "url": BASE + "services/" + s["slug"] + ".html"}} for s in SERVICES]}}]
-    write("index.html", page("", "Mark Anthony Maina | RevOps, Marketing Automation & AI. I help businesses make money.",
-                             "I help businesses make money: RevOps, marketing automation, AI sales agents, SEO, CRO and websites that sell. Real client results, real numbers. Based in Nairobi, working worldwide.",
+    write("index.html", page("", "Mark Anthony Maina | I help businesses make money online. RevOps, Automation & AI",
+                             "I help businesses make money online: RevOps, marketing automation, AI sales agents, SEO, CRO and websites that sell. Real client results, real numbers. Based in Nairobi, working worldwide.",
                              body, r, "home", ld))
 
 
