@@ -175,9 +175,10 @@ def build_home():
         <picture><source type="image/webp" srcset="assets/img/mark-hero-560.webp 560w, assets/img/mark-hero-900.webp 900w" sizes="(max-width: 960px) 90vw, 470px">
         <img src="assets/img/mark-hero.jpg" alt="Mark Anthony Maina" width="900" height="1125" fetchpriority="high"></picture>
       </div>
-      <div class="chip chip-a"><div class="chip-row"><div><small>Conversions &middot; Snapshot</small><b class="up">+47%</b></div>{sparkline([3, 4, 3.6, 5, 6.2, 7.4])}</div></div>
-      <div class="chip chip-b"><small>Organic traffic &middot; Debluc</small><b class="up">+74%</b><small>in one month</small></div>
-      <div class="chip chip-c">new enquiry &rarr; AI quote &rarr; email <span class="ok">&#10003; &lt;60s</span></div>
+      <div class="chip chip-a"><span class="chip-ic">{icon("grad")}</span><div><b>BSc Engineering</b><small>Electrical &amp; Electronics &middot; JKUAT</small></div></div>
+      <div class="chip chip-b"><span class="chip-ic">{icon("code")}</span><div><b>30+</b><small>sites, platforms &amp; automations shipped</small></div></div>
+      <div class="chip chip-c"><span class="chip-ic">{icon("cal")}</span><div><b>8 years</b><small>building for the web, since 2018</small></div></div>
+      <div class="chip chip-d"><span class="chip-ic">{icon("globe")}</span><div><b>Kenya &middot; UK</b><small>clients on two continents</small></div></div>
     </div>
   </div>
 </section>
@@ -186,10 +187,10 @@ def build_home():
 <section class="section-tight">
   <div class="container">
     <div class="stats reveal">
-      <div class="stat"><b data-count="8">8</b><span>years building for the web, from code to campaigns</span><em>since 2018</em></div>
-      <div class="stat"><b class="money" data-count="47" data-prefix="+" data-suffix="%">+47%</b><span>conversions on a Google Ads landing page</span><em>Snapshot</em></div>
-      <div class="stat"><b class="money" data-count="74" data-prefix="+" data-suffix="%">+74%</b><span>organic search sessions in one month</span><em>Debluc</em></div>
-      <div class="stat"><b data-count="30" data-suffix="+">30+</b><span>websites, platforms and automations shipped</span><em>and counting</em></div>
+      <div class="stat"><b data-count="8">8</b><span>revenue systems built from scratch: CRMs, AI agents, quote engines</span><em>in production</em></div>
+      <div class="stat"><b data-count="6">6</b><span>growth clients run on my own RevOps platform</span><em>live, API-synced</em></div>
+      <div class="stat"><b data-count="121">121</b><span>pages fixed for Google in a single week</span><em>Kiboko</em></div>
+      <div class="stat"><b data-count="4" data-suffix=" yrs">4 yrs</b><span>longest client relationship, and still going</span><em>Snapshot, since 2022</em></div>
     </div>
   </div>
 </section>
