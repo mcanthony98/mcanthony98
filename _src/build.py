@@ -157,7 +157,7 @@ def build_home():
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <div class="pill reveal"><i></i>Taking new projects &middot; Nairobi &rarr; worldwide</div>
+      <div class="pill reveal"><i></i>Taking new projects &middot; Worldwide</div>
       <h1 class="reveal d1">I help businesses make <span class="serif">money.</span></h1>
       <p class="lead reveal d2">Hi, I&rsquo;m Mark. Not traffic, not likes: <strong>money.</strong> I build the systems between a stranger&rsquo;s first click and cash in your bank (the website, the tracking, the automations, the AI agents) and then I show you the numbers, so you know it worked.</p>
       <div class="btn-row reveal d3">
