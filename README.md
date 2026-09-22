@@ -1,37 +1,18 @@
-[![Header](https://makeawebsitehub.com/wp-content/uploads/2016/01/coding.jpg "I Just Love Coding")](https://mcanthony98.github.io/mcanthony98/)
-<h1> Hi there 👋</h1>
-<p>My Name is Mark Anthony Maina. I am a web developer currently living in Nairobi, Kenya. I loving coding and programming. I believe in creating solutions to problems because
-"<i><strong>problems were meant to be solved</strong></i>". </p>
-<a href="https://mcanthony98.github.io/mcanthony98/"> 👉 Click here to view my full profile</a>
+# Mark Anthony Maina: RevOps, Marketing Automation & AI
 
-<hr/>
-<h2>💻 Programming Skills</h2>
-<ul>
-  <li>HTML</li>
-  <li>CSS</li>
-  <li>PHP</li>
-  <li>Javascript</li>
-  <li>Bootstrap</li>
-  <li>Java</li>
-  <li>MySQL</li>
-  etc...
-</ul>
+I help businesses make money: the website, the tracking, the automations and the AI agents between a stranger's first click and a paid invoice.
 
-<hr/>
-<a href="https://mcanthony98.github.io/mcanthony98/"> 👉 Click here to view my full profile</a>
-<hr/>
-<h3 align="center">😃 😃 😃 We create what we dream 😃 😃 😃</h3>
-<!--
-**mcanthony98/mcanthony98** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+**Portfolio:** https://mcanthony98.github.io/mcanthony98/
+**Agency:** [Ganiam Tech](https://ganiamtech.com/) · **Email:** mmaina.online@gmail.com
 
-Here are some ideas to get you started:
+Service pages you can send on their own:
+[RevOps](https://mcanthony98.github.io/mcanthony98/services/revops.html) ·
+[Marketing Automation](https://mcanthony98.github.io/mcanthony98/services/marketing-automation.html) ·
+[AI Sales Agents](https://mcanthony98.github.io/mcanthony98/services/ai-sales-agents.html) ·
+[SEO](https://mcanthony98.github.io/mcanthony98/services/seo.html) ·
+[CRO](https://mcanthony98.github.io/mcanthony98/services/cro.html) ·
+[Websites](https://mcanthony98.github.io/mcanthony98/services/web-development.html) ·
+[Analytics](https://mcanthony98.github.io/mcanthony98/services/analytics-tracking.html)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+Static site. Edit copy in `_src/content.py`, then run `python _src/build.py` from the repo root.
