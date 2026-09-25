@@ -321,7 +321,6 @@ def build_home():
         <li><b>Automation &amp; AI</b><span>Then how to make sure no lead ever gets forgotten again.</span></li>
         <li><b>RevOps, today</b><span>Now I own the whole path, from first click to money in the bank.</span></li>
       </ol>
-      <p class="reveal">My old LinkedIn banner said <em>&ldquo;Building websites that don&rsquo;t just look good. They sell.&rdquo;</em> Still true. It just turned out the website was one stage out of five.</p>
       <p class="reveal">That&rsquo;s the difference. Most people you&rsquo;ll hire do one slice and hand the rest to someone else. I write the code, set up the tracking, build the automations, and report on the one number that matters: did you make more money?</p>
       <a class="ganiam reveal" href="{GANIAM}" target="_blank" rel="noopener"><span class="gt">GT</span><p><strong>Ganiam Tech</strong> is my Nairobi growth agency. Client projects are contracted through it: same person doing the work, a proper company behind the invoice. <span class="link-arrow" style="display:inline-flex">ganiamtech.com {icon("arrow")}</span></p></a>
       <div class="edu reveal"><span>BSc Electrical &amp; Electronics Engineering, JKUAT</span><span>Diploma, Business IT, Strathmore</span><span>Clients in Kenya, UK &amp; US</span></div>
