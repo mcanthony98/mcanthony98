@@ -649,9 +649,12 @@ if __name__ == "__main__":
     build_home()
     build_services_index()
     import webdev
+    import seopage
     for s in SERVICES:
         if s["slug"] == "web-development":
             webdev.build(page, write, contact)
+        elif s["slug"] == "seo":
+            seopage.build(page, write, contact)
         else:
             build_service(s)
     for i, c in enumerate(CASES):

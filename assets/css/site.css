@@ -793,3 +793,28 @@ a.wsite:hover .wlink svg { transform: translateX(3px); }
   .wf-stats div { font-size: 12px; }
   .wchip b { font-size: 24px; }
 }
+
+/* ---------- SEO page ---------- */
+.serpcard { background: #fff; color: #202124; border-radius: 16px; padding: 20px 22px; box-shadow: 0 40px 80px -40px rgba(0, 0, 0, .8); display: grid; gap: 16px; }
+.serpcard .sq { display: flex; align-items: center; gap: 10px; border: 1px solid #dfe1e5; border-radius: 999px; padding: 10px 16px; font-size: 15px; box-shadow: 0 1px 6px rgba(32, 33, 36, .18); }
+.serpcard .sq svg { width: 18px; height: 18px; color: #9aa0a6; }
+.serpcard .sr small { font-size: 12.5px; color: #4d5156; }
+.serpcard .sr b { display: block; color: #1a0dab; font-size: 17px; font-weight: 500; margin: 2px 0; line-height: 1.3; }
+.serpcard .sr p { margin: 0; font-size: 13.5px; color: #4d5156; line-height: 1.45; }
+.serpcard .sr.you { background: var(--money-soft); margin: 0 -10px; padding: 10px; border-radius: 10px; outline: 2px solid var(--money); }
+.serpcard .sr.dim { opacity: .4; }
+.seo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.seo-card { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 26px; transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
+a.seo-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.seo-top { display: flex; justify-content: space-between; gap: 14px; align-items: flex-start; margin-bottom: 16px; }
+.seo-top h3 { margin: 10px 0 0; font-size: 24px; }
+.seo-big { text-align: right; flex: none; }
+.seo-big b { display: block; font-family: var(--display); font-size: 34px; color: var(--money); letter-spacing: -.04em; line-height: 1; }
+.seo-big small { font-size: 12.5px; color: var(--muted); }
+.seo-charts { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+.seo-card p { color: var(--muted); font-size: 15.5px; }
+.seo-finds { display: grid; gap: 10px; margin: 0 0 18px; }
+.seo-finds li { padding: 12px 14px; border-radius: 12px; background: var(--paper); font-size: 15px; line-height: 1.5; color: var(--muted); }
+.seo-finds b { color: var(--text); }
+@media (max-width: 960px) { .seo-grid { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .seo-charts { grid-template-columns: 1fr; } .seo-top { flex-direction: column; } .seo-big { text-align: left; } .seo-big b { font-size: 28px; } }
