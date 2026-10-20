@@ -324,6 +324,32 @@ def kiboko_enquiries(w=480):
                        sub="100% untouched in the system", source="Source: Kiboko booking database, Sep 2025 &ndash; Aug 2026")
 
 
+def kiboko_clicks_weekly(w=480):
+    weeks = [("3 Aug", 0), ("10", 4), ("17", 2), ("24", 1), ("31", 5), ("7 Sep", 0), ("14", 3), ("21", 3), ("28", 5), ("5 Oct", 14), ("12", 12)]
+    return chart_block("Clicks from Google, per week",
+                       bar_chart(w=w, bars=[(l, v, "money" if i >= 7 else "muted") for i, (l, v) in enumerate(weeks)], h=220, ymax=16),
+                       sub="fixes live 22 Sep", source="Source: Google Search Console, 2026")
+
+
+def kiboko_clicks_monthly(w=480):
+    return chart_block("Clicks from Google",
+                       bar_chart(w=w, bars=[("August", 7, "muted"), ("September", 14, "money"), ("1&ndash;19 Oct", 28, "money")], h=220, ymax=32),
+                       sub="4&times; August in 19 days", source="Source: Google Search Console")
+
+
+def kiboko_ctr(w=480):
+    return chart_block("Searchers who click through",
+                       line_chart(w=w, points=[("Aug", 0.9), ("Sep", 1.9), ("Oct", 2.9)], color="money", h=210, fmt="{:.1f}%", ymin=0, ymax=3.4),
+                       sub="0.9% &rarr; 2.9%", source="Source: Google Search Console (CTR)")
+
+
+def kiboko_rank(w=480):
+    return chart_block("Average position on Google (lower is better)",
+                       line_chart(w=w, points=[("Jul", 34.4), ("Aug", 36.2), ("Sep", 11.8), ("Oct", 17.3)], color="money", h=210,
+                                  fmt="{:.0f}", invert=True, ymin=8, ymax=40),
+                       sub="36 &rarr; 17", source="Source: Google Search Console")
+
+
 def debluc_organic(w=480):
     return chart_block("Organic search sessions",
                        bar_chart(w=w, bars=[("July", 19, "muted"), ("August", 33, "money")], h=220, ymax=40),
@@ -394,37 +420,41 @@ def _checks(items):
 
 def body_kiboko(r):
     return f"""
-<h2>The situation</h2>
-<p>Kiboko Tours &amp; Travel is a Kenyan safari operator selling private tour packages (enquiry, then quote, then deposit) and, soon, group safaris you can pay for online. They came to me with a simple question: <em>why aren&rsquo;t we getting enquiries like we used to?</em></p>
-<p>Nobody had a clear answer, because nobody had looked at the whole path at once. So I pulled everything: 16 months of Search Console, a year of GA4, Clarity recordings, the site code, and their booking database.</p>
+<h2>Where they started</h2>
+<p>Kiboko Tours &amp; Travel sells private and group safaris across East Africa. In early 2026 their website was quietly disappearing from Google. Fewer people saw it every month, and nobody knew why.</p>
+<div class="figure">{kiboko_impressions(w=620)}</div>
+<p>We looked at everything at once: 16 months of Search Console, a year of analytics, the site code and the booking database. The reasons were clear:</p>
+{_checks(["Google was reading the wrong copies of the pages: <strong>0 of 44</strong> safari packages were known to Google",
+          "The site had been hacked twice, and spam pages had taken over parts of it",
+          "The homepage was slow and heavy on phones",
+          "Enquiries arrived, but none were tracked, so nobody knew which marketing worked"])}
 
-<h2>What the data said</h2>
-<p>First, the headline. Kiboko hadn&rsquo;t slowly lost interest from customers. It had slowly disappeared from Google.</p>
-<div class="fig-grid"><div class="figure">{kiboko_impressions(w=380)}</div><div class="figure">{kiboko_position(w=380)}</div></div>
-<p>Digging into why turned up a chain of problems, each one making the next worse:</p>
-{_checks(["<strong>Google had indexed the wrong copies of the pages.</strong> Broken canonical tags and empty titles meant Google picked the non-www, trailing-slash versions. <strong>0 of 44</strong> package URLs in the sitemap were known to Google.",
-          "<strong>Search Console was under-reporting.</strong> Because Google preferred the non-www copies, their clicks landed in a property nobody had. GA4 showed about 150 organic sessions a month while Search Console showed about 20 clicks.",
-          "<strong>The site had been hacked, twice.</strong> Search Console went dark from August to December 2025. Then in April 2026 gambling spam hijacked 3 pages and pulled in 8,125 junk clicks from Indonesian slot-site searches.",
-          "<strong>The homepage weighed 5 MB.</strong> 70 files, with single &lsquo;thumbnail&rsquo; images over 500 KB. On a phone on safari-country data, that&rsquo;s a long wait."])}
-<div class="figure">{kiboko_weight(w=620)}</div>
-<p>And then the finding that mattered most for revenue. The site was actually working for the people who found it: real visitors engaged about half the time, and about 2% of them sent an enquiry. But after the enquiry, nothing was recorded.</p>
-<div class="figure">{kiboko_enquiries(w=620)}</div>
-<div class="callout"><strong>68 real enquiries in 12 months, and every single one still said &ldquo;new&rdquo;.</strong> No status, no quote amount, no outcome. The business couldn&rsquo;t tell which enquiries became safaris, so it couldn&rsquo;t tell which marketing was worth paying for.</div>
+<h2>What we did</h2>
+{_checks(["Fixed the settings that tell Google which page is the real one, and wrote proper titles for every safari package and blog post",
+          "Closed the security holes and redirected the old spam paths",
+          "Rebuilt the sitemap so Google can find every package",
+          "Set up tracking for every enquiry, booking and WhatsApp tap",
+          "Rebuilt the homepage around Kiboko&rsquo;s own photos, with two clear paths: group safaris and private safaris",
+          "Cleaned up the catalogue (44 overlapping safaris down to 19 clear ones) and added a proper destinations section"])}
+<div class="fig-grid">
+  <div class="figure"><div class="chart-title"><span>Before</span><small>early 2026</small></div><img src="{r}assets/img/sites/kiboko-old.webp" alt="Old Kiboko homepage" loading="lazy" style="border-radius:8px;border:1px solid var(--line)"></div>
+  <div class="figure"><div class="chart-title"><span>After</span><small>October 2026</small></div><img src="{r}assets/img/sites/kiboko.webp" alt="New Kiboko homepage" loading="lazy" style="border-radius:8px;border:1px solid var(--line)"></div>
+</div>
 
-<h2>What I shipped</h2>
-<p>The audit took days, not weeks. The first batch of fixes went live the same week, straight into the codebase:</p>
-{_checks(["Canonicals, hreflang and social tags fixed site-wide, pointing at the one true www address",
-          "Proper titles written for <strong>121 package pages</strong> and every blog post",
-          "301 redirects for the path tricks the spam used, plus the index.php duplicates",
-          "Sitemap rebuilt around real pages and robots.txt pointed at the right one",
-          "SQL-injection holes closed on the pages that took IDs from the URL",
-          "GA4 events live for <code>private_enquiry</code>, <code>custom_trip_enquiry</code>, <code>whatsapp_click</code> and <code>form_blocked</code>",
-          "Price shown on package pages next to a pre-filled WhatsApp button"])}
+<h2>The results</h2>
+<p>The first fixes went live on 22 September. Within two weeks, Google started sending more people, and more of the people who saw Kiboko in search clicked through.</p>
+<div class="figure">{kiboko_clicks_weekly(w=620)}</div>
+<div class="fig-grid"><div class="figure">{kiboko_clicks_monthly(w=380)}</div><div class="figure">{kiboko_ctr(w=380)}</div></div>
+{_checks(["<strong>4&times; the Google clicks:</strong> 7 in all of August, 28 in the first 19 days of October",
+          "<strong>Weekly impressions up 180%:</strong> from 166 a week in early September to 464 by mid-October",
+          "<strong>3&times; the click-through rate:</strong> 0.9% of searchers clicked in August, 2.9% in October",
+          "<strong>Twice as high on Google:</strong> average position improved from 36 to 17",
+          "<strong>Every enquiry now tracked</strong> back to where it came from"])}
+<div class="figure">{kiboko_rank(w=620)}</div>
 
-<h2>What happens next</h2>
-<p>Now every stage from Google to deposit is measured, so the next fixes are decided by numbers, not guesses. The first experiment is already running:</p>
-<div class="callout"><strong>Hypothesis:</strong> showing &ldquo;From $X&rdquo; and a pre-filled WhatsApp button next to the quote button lifts private-package enquiries per package viewer from about 30% to 40%+, because international buyers compare on price and prefer to chat.</div>
-<div class="callout honest"><strong>Honest status:</strong> Google takes weeks to re-crawl and trust a site again, so the recovery numbers aren&rsquo;t in yet. This page gets updated as they come in. What I can show you today is the diagnosis and the fix, and that&rsquo;s where most agencies never get to.</div>
+<h2>What&rsquo;s next</h2>
+<p>Google is trusting the site again, and the trend is still going up. The next job is making it easier for visitors to reach a safari page from wherever they land, so more of this new traffic turns into bookings. We report the numbers every month.</p>
+<p><a class="link-arrow" href="https://www.kibokotoursandtravel.com/" target="_blank" rel="noopener">Visit kibokotoursandtravel.com {icon("arrow")}</a></p>
 """
 
 
@@ -533,15 +563,15 @@ def body_bil(r):
 
 CASES = [
     {"slug": "kiboko", "client": "Kiboko Tours & Travel", "industry": "Safari operator", "where": "Kenya", "year": "2026",
-     "services": ["RevOps audit", "Technical SEO", "Tracking", "CRO"], "url": "kibokotoursandtravel.com", "shot": "kiboko",
-     "card_title": "The safari company Google forgot",
-     "summary": "Visibility had dropped 87% and nobody knew why. One end-to-end audit found the reasons, from broken canonicals to a hacked site to 68 enquiries nobody followed up. The first fixes went live the same week.",
-     "metrics": [("-87%", "Google visibility since January (diagnosed)", "down"), ("0/44", "package pages Google knew about", "down"), ("121", "package pages fixed in batch one", "up")],
-     "chart": kiboko_impressions,
-     "h1": 'Visibility down 87%. Nobody knew why. <span class="serif">Now we do.</span>',
-     "lead": "A full-funnel audit of a Kenyan safari operator: 16 months of search data, a year of analytics, the codebase and the booking database. It found why Google stopped showing the site, why enquiries were going nowhere, and what to fix first. Then I fixed it.",
-     "stats": [("87%", "drop in Google impressions, Jan to Aug", "down"), ("68", "real enquiries in 12 months, all marked &lsquo;new&rsquo;", ""),
-               ("5 MB", "homepage weight on a phone", "down"), ("&lt; 1 wk", "from audit to first fixes live", "up")],
+     "services": ["Website rebuild", "Technical SEO", "Tracking", "RevOps"], "url": "kibokotoursandtravel.com", "shot": "kiboko-new",
+     "card_title": "4&times; the Google clicks in a month for a safari company",
+     "summary": "Kiboko was fading from Google. We found out why, fixed the site and rebuilt the homepage. Within four weeks, weekly clicks from Google went from about 3 to 14.",
+     "metrics": [("4&times;", "Google clicks: 7 in Aug, 28 in 19 days of Oct", "up"), ("3&times;", "click-through rate, 0.9% to 2.9%", "up"), ("36&rarr;17", "average Google position", "up")],
+     "chart": kiboko_clicks_weekly,
+     "h1": 'From fading on Google to <span class="serif">4&times; the clicks</span> in a month.',
+     "lead": "Kiboko Tours &amp; Travel sells safaris across East Africa. Their website was quietly disappearing from Google. We found out why, fixed it and rebuilt the homepage. Four weeks later, the numbers were climbing.",
+     "stats": [("4&times;", "Google clicks: 7 in August, 28 in the first 19 days of October", "up"), ("+180%", "weekly Google impressions, 166 to 464", "up"),
+               ("3&times;", "click-through rate, 0.9% to 2.9%", "up"), ("36&rarr;17", "average position on Google (lower is better)", "up")],
      "body": body_kiboko},
     {"slug": "debluc", "client": "Debluc Hair Essentials", "industry": "Hair care ecommerce", "where": "Nairobi", "year": "2026",
      "services": ["SEO", "Content", "Tracking", "RevOps"], "url": "debluchairessentials.co.ke", "shot": "debluc",

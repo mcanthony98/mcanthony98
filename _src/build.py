@@ -648,8 +648,12 @@ def build_work_index():
 if __name__ == "__main__":
     build_home()
     build_services_index()
+    import webdev
     for s in SERVICES:
-        build_service(s)
+        if s["slug"] == "web-development":
+            webdev.build(page, write, contact)
+        else:
+            build_service(s)
     for i, c in enumerate(CASES):
         build_case(c, i)
     build_work_index()
