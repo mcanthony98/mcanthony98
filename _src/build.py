@@ -157,7 +157,7 @@ def searv(html, path):
         svc = ""
     for label in ("Book a free call", "Book a free 20-min call"):
         html = html.replace(f'href="#contact">{label}', f'href="{book_url(svc)}">{label}')
-    widget = (f'<script src="{SEARV_BASE}/widget.js" data-gtcas="ganiam" data-service="{svc or "general"}" '
+    widget = (f'<script src="{SEARV_BASE}/widget.js" data-gtcas="ganiam" data-source="portfolio" data-service="{svc or "general"}" '
               f'data-primary="#0b0d18" data-accent="#6552e0" async></script>\n')
     return html.replace("</body>", widget + "</body>", 1)
 

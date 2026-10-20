@@ -15,10 +15,9 @@ GITHUB = "https://github.com/mcanthony98"
 GANIAM = "https://ganiamtech.com/"
 
 # SEARV (mysearv.ganiamtech.com/ganiam): "Book a call" calendar + the AI assistant.
-# Keep SEARV_LIVE = False until /ganiam is deployed and /ganiam/book loads,
-# otherwise every Book button would point at a page that does not exist yet.
+# Set SEARV_LIVE=0 in the environment to build without booking links and the assistant.
 SEARV_BASE = os.environ.get("SEARV_BASE", "https://mysearv.ganiamtech.com/ganiam")   # env override = local testing only
-SEARV_LIVE = os.environ.get("SEARV_LIVE", "0") == "1" or False
+SEARV_LIVE = os.environ.get("SEARV_LIVE", "1") == "1"   # live since 2026-10-21
 
 
 def book_url(service=""):
