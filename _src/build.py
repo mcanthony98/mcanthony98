@@ -3,7 +3,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
-from kit import (BASE, EMAIL, GANIAM, LINKEDIN, GITHUB, WHATSAPP, browser, contact, esc, footer, head, header,
+from kit import (BASE, EMAIL, GANIAM, LINKEDIN, GITHUB, WHATSAPP, SEARV_BASE, SEARV_LIVE, book_url, browser, contact, esc, footer, head, header,
                  icon, other_services, sparkline)
 from content import (AGENT_DIAGRAM, CASE, CASES, CLIENTS, EXTRA_PROOF, QUOTES, SEARV_DIAGRAM, SERVICES, SITES,
                      SVC, SYSTEMS)
@@ -144,7 +144,22 @@ def loop_block():
 
 
 def page(path, title, desc, body, r="", active="", ld=None):
-    return head(title, desc, path, ld, r) + "<body>\n" + header(SERVICES, r, active) + "<main>" + body + "</main>\n" + footer(SERVICES, CASES, r)
+    html = head(title, desc, path, ld, r) + "<body>\n" + header(SERVICES, r, active) + "<main>" + body + "</main>\n" + footer(SERVICES, CASES, r)
+    return searv(html, path)
+
+
+def searv(html, path):
+    """Book buttons -> the SEARV calendar, plus the AI assistant (once SEARV_LIVE)."""
+    if not SEARV_LIVE:
+        return html
+    svc = path[len("services/"):-len(".html")] if path.startswith("services/") and path.endswith(".html") else ""
+    if svc == "index":
+        svc = ""
+    for label in ("Book a free call", "Book a free 20-min call"):
+        html = html.replace(f'href="#contact">{label}', f'href="{book_url(svc)}">{label}')
+    widget = (f'<script src="{SEARV_BASE}/widget.js" data-gtcas="ganiam" data-service="{svc or "general"}" '
+              f'data-primary="#0b0d18" data-accent="#6552e0" async></script>\n')
+    return html.replace("</body>", widget + "</body>", 1)
 
 
 # ---------------------------------------------------------------- home

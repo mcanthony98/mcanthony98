@@ -4,6 +4,7 @@ Jekyll ignores folders that start with "_", so nothing in _src/ is published.
 Run `python _src/build.py` from the repo root to regenerate every page.
 """
 import html
+import os
 import json
 
 BASE = "https://mcanthony98.github.io/mcanthony98/"
@@ -12,6 +13,16 @@ WHATSAPP = "https://wa.me/254799830928"
 LINKEDIN = "https://www.linkedin.com/in/mark-maina-web-dev/"
 GITHUB = "https://github.com/mcanthony98"
 GANIAM = "https://ganiamtech.com/"
+
+# SEARV (mysearv.ganiamtech.com/ganiam): "Book a call" calendar + the AI assistant.
+# Keep SEARV_LIVE = False until /ganiam is deployed and /ganiam/book loads,
+# otherwise every Book button would point at a page that does not exist yet.
+SEARV_BASE = os.environ.get("SEARV_BASE", "https://mysearv.ganiamtech.com/ganiam")   # env override = local testing only
+SEARV_LIVE = os.environ.get("SEARV_LIVE", "0") == "1" or False
+
+
+def book_url(service=""):
+    return f"{SEARV_BASE}/book?src=portfolio" + (f"&amp;service={service}" if service else "")
 FONTS = ("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800"
          "&family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap")
 
@@ -234,6 +245,8 @@ def header(services, r="", active="", light=False):
 
 
 def contact(r="", title=None, lead=None, topic_default=""):
+    SEARV_WAYS = (f'<a href="{book_url()}"><span class="ic">{icon("cal")}</span><span><small>Pick a time that suits you</small><strong>Book a free 20-min call</strong></span></a>'
+                  f'<a href="#" data-searv-open><span class="ic">{icon("bot")}</span><span><small>Get answers right now</small><strong>Chat with my AI assistant</strong></span></a>')
     title = title or 'Let&rsquo;s talk about your <span class="serif">numbers.</span>'
     lead = lead or ("Tell me what you sell and where you think it&rsquo;s going wrong. I&rsquo;ll reply within one working day, "
                     "and the first call is free. If I&rsquo;m not the right person for it, I&rsquo;ll tell you who is.")
@@ -247,7 +260,7 @@ def contact(r="", title=None, lead=None, topic_default=""):
       <h2>{title}</h2>
       <p class="lead">{lead}</p>
       <div class="contact-ways">
-        <a href="mailto:{EMAIL}"><span class="ic">{icon("mail")}</span><span><small>Email me directly</small><strong>{EMAIL}</strong></span></a>
+        {SEARV_WAYS if SEARV_LIVE else ""}<a href="mailto:{EMAIL}"><span class="ic">{icon("mail")}</span><span><small>Email me directly</small><strong>{EMAIL}</strong></span></a>
         <a href="{WHATSAPP}" target="_blank" rel="noopener"><span class="ic">{icon("wa")}</span><span><small>WhatsApp (Ganiam Tech)</small><strong>+254 799 830 928</strong></span></a>
         <a href="{LINKEDIN}" target="_blank" rel="noopener"><span class="ic">{icon("in")}</span><span><small>LinkedIn</small><strong>Mark Anthony Maina</strong></span></a>
       </div>
