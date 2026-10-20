@@ -150,5 +150,5 @@ def build(page, write, contact, r="../"):
               {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ]}]
     write("services/web-development.html", page("services/web-development.html",
           "Custom Website Design &amp; Development | Mark Anthony Maina".replace("&amp;", "&"),
-          "Custom websites for businesses in Kenya, the UK and the USA, with admin portal, SEO, domain, business email, tracking and CRM. See 17 sites I've built.",
+          "Custom websites for businesses in Kenya, the UK and the USA, with admin portal, SEO, domain, business email, tracking and CRM. See 16+ sites I've built.",
           body, r, "services", ld))
