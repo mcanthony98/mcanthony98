@@ -34,8 +34,9 @@ INCLUDED = [
 ]
 
 FAQ = [
-    ("How much does a website cost?", "From KES 35,000 for a one-page site and KES 75,000 for a full business website. You get one fixed price before we start."),
-    ("How long does it take?", "1 to 2 weeks for a one-page site, 3 to 5 weeks for a full website."),
+    ("How much does a website cost?", "From KES 35,000 for a one-page site, KES 100,000 for a full business website, and from KES 150,000 for a website with custom features, AI automations and integrations. You get one fixed price before we start."),
+    ("How long does it take?", "1 to 2 days for a one-page site and about 1 week for a business website. Custom builds depend on the features you need."),
+    ("Are there any hidden costs?", "No. There are no other costs. Your website is live and maintained for one full year. After that, it&rsquo;s KES 10,000 a year to renew your domain, hosting and maintenance."),
     ("Can I update it myself?", "Yes. Every site comes with an admin portal, and I show you how to use it."),
     ("Is the domain and email in my name?", "Yes. Your domain, hosting, email and data always belong to you."),
 ]
@@ -58,9 +59,9 @@ def build(page, write, contact, r="../"):
                                                   ("users", "Saved", "in your CRM"), ("chart", "Measured", "so you know what works")]))
     quotes = "".join(f'<blockquote class="quote reveal"><div class="mark">&ldquo;</div><p>{q}</p><footer><i>{n[0]}</i><div><strong>{n}</strong><span>{ro}</span></div></footer></blockquote>'
                      for q, n, ro in QUOTES)
-    pk = [("One-page site", "One offer, one page.", "KES 35,000", ["Custom design", "WhatsApp, call and form", "Domain, hosting and tracking", "1 to 2 weeks"], False),
-          ("Business website", "For most growing businesses.", "KES 75,000", ["Up to 8 pages", "Admin portal", "SEO, domain, hosting and business email", "GA4, Search Console and Clarity", "3 to 5 weeks"], True),
-          ("Website + system", "Website with bookings, payments or CRM.", "KES 150,000", ["Everything in Business", "Bookings, payments or member areas", "CRM for every enquiry", "Custom features"], False)]
+    pk = [("One-page site", "One offer, one page.", "KES 35,000", ["Custom design", "WhatsApp, call and form", "Domain, hosting and tracking", "Ready in 1 to 2 days"], False),
+          ("Business website", "For most growing businesses.", "KES 100,000", ["Up to 8 pages", "Admin portal", "SEO, domain, hosting and business email", "GA4, Search Console and Clarity", "Ready in 1 week"], True),
+          ("Custom website", "Built around how your business works.", "KES 150,000", ["Everything in Business", "Custom features and customizations", "AI automations", "Integrations: payments, CRM, bookings and more"], False)]
     pkgs = "".join(f"""<div class="pkg reveal{' hot' if hot else ''}"><span class="badge">{badge}</span><h3>{nm}</h3><p class="for">{fr}</p>
 <div class="wprice">From <b>{amt}</b></div><ul>{''.join(f"<li>{icon('check')}<span>{x}</span></li>" for x in items)}</ul>
 <a class="btn {'btn-primary' if hot else 'btn-ghost'}" href="#contact">Get a quote {icon('arrow')}</a></div>""" for (nm, fr, amt, items, hot), badge in zip(pk, ["Starter", "Most chosen", "Advanced"]))
@@ -121,7 +122,7 @@ def build(page, write, contact, r="../"):
 <section class="section">
   <div class="container">
     <div class="section-head split"><div class="reveal"><div class="kicker">Pricing</div><h2>Clear prices. <span class="serif">No surprises.</span></h2></div>
-    <p class="lead reveal d1">One fixed price before we start. 50% to begin, 50% when you approve the finished site.</p></div>
+    <p class="lead reveal d1">One fixed price before we start. Every site includes its first year of domain, hosting and maintenance. No hidden costs.</p></div>
     <div class="pkgs">{pkgs}</div>
   </div>
 </section>
